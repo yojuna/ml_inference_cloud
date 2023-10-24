@@ -1,0 +1,8 @@
+<launch>
+
+    <arg name="rosbag_file" default="$(find mqtt_node)/src/bag/left_camera_templergraben.bag" />
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock -l $(arg rosbag_file) "/>
+
+    <node pkg="mqtt_node" type="vehicle_node.py" name="vehicle_node" output="screen"/>
+
+</launch>

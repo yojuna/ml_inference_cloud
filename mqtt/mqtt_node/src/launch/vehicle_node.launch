@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="mqtt_node" type="vehicle_node.py" name="vehicle_node" output="screen"/>
+
+</launch>

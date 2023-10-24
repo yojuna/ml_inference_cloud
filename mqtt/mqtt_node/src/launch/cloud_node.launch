@@ -1,0 +1,13 @@
+<launch>
+
+  <arg name="model_path" default="$(find mqtt_node)/src/model/mobilenet_v3_small_968_608_os8.pb"/>
+  <arg name="xml_path" default="$(find mqtt_node)/src/xml/convert.xml"/>
+  
+  <!-- Use the flag to use the Saved models instead of Frozen model. if false, leave blank, eg. -->
+    <!-- <arg name="use_saved_model" default=""/> -->
+  <arg name="use_saved_model" default=""/>
+
+    <node pkg="mqtt_node" type="cloud_node.py" name="cloud_node" 
+        args="--model_path $(arg model_path) --xml_path $(arg xml_path) $(arg use_saved_model)" output="screen"/>
+
+</launch>
